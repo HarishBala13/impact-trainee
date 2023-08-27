@@ -1,0 +1,100 @@
+.accounts_right .backgroundBlur{
+  background-color: rgba(247, 236, 26, 0.5);
+  z-index: 2;
+  border-radius: 20px;
+}
+.accounts_right .backgroundBlur .paymentCardCancel{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.accounts_right .backgroundBlur .paymentCardCancel p{
+  font-size: 0.65cm;
+  color: black;
+  line-height: 25px;
+}
+.accounts_right .backgroundBlur .paymentCardCancel .buttons{
+  display: flex;
+  justify-content: space-around;
+}
+.accounts_right .backgroundBlur .paymentCardCancel .buttons button{
+  border: none;
+  padding: 15px;
+  background-color: #42ec42;
+  font-size: 0.4cm;
+  font-weight: 700;
+  border-radius: 20px;
+}
+.accounts_right .backgroundBlur .paymentCardCancel .buttons button:hover{
+  box-shadow: 0px 2px 3px 5px rgb(76, 75, 75);
+}
+.accounts_right{
+  background-color: #fff;
+  color: #7f7f7f;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+.accounts_right .noPaymentCard p{
+  font-size: 25px;
+  font-weight: 400;
+  color: black;
+  line-height: 30px;
+}
+.accounts_right .paymentCard{
+  background: linear-gradient(to right, deeppink, rgb(244, 10, 244));
+  border-radius: 20px;
+  height: 30vh;
+  width: 50vh;
+  color: #7f7f7f;
+}
+.accounts_right .paymentCard .fa-solid{
+  margin-top: 8px;
+  margin-left: 270px;
+  font-size: 0.6cm;
+  color: #fff;
+}
+.accounts_right .paymentCard .simImage img{
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+}
+.accounts_right .paymentCard .cardDetails{
+  margin-top: 8px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.accounts_right .paymentCard .cardDetails p, .accounts_right .paymentCard .cardType p{
+  margin-left: 20px;
+  font-size: 0.45cm;
+  color: #fff;
+}
+.accounts_right .paymentCard .cardType{
+  display: flex;
+  justify-content: space-around;
+}
+.accounts_right .paymentCard .cardType img{
+  margin-top: -70px;
+  width: 70px;
+  height: 50px;
+}
+.accounts_right .cancelCard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+.accounts_right .cancelCard button{
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 14px;
+  background-color: #0ff00f;
+  color: black;
+  font-size: 0.6cm;
+  font-weight: 400;
+}
+.accounts_right .cancelCard button:hover{
+  box-shadow: 0px 2px 3px 5px rgb(76, 75, 75);
+}

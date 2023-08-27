@@ -1,0 +1,61 @@
+.footer{
+  background-color: #121212;
+  color: #9a9a9a;
+  font-size: 0.50cm;
+}
+.footer .copyrights{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer .copyrights div p a{
+  text-decoration: none;
+  color: #fff;
+}
+.bottom_contents{
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ padding: 10px;
+}
+.company,.communities{
+  display: flex;
+  flex-direction: column;
+}
+.company p,.communities p{
+  padding-top: 20px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.7cm;
+}
+.company a,.communities a{
+  font-size: 0.5cm;
+  color: #9a9a9a;
+  text-decoration: none;
+  padding: 1rem;
+}
+.company a:hover,.communities a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.social_media_links{
+  display: flex;
+  flex-direction: column;
+}
+.brandlogo{
+  display: grid;
+  place-items: center;
+}
+.brandlogo img{
+  width: 250px;
+  height: 150px;
+}
+.bottom_contents .social_media_links a{
+  text-decoration: none;
+  color: #9a9a9a;
+  font-size: 0.5cm;
+}
+.bottom_contents .social_media_links i{
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 0.7cm;
+}

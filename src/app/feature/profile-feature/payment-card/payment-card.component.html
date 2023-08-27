@@ -1,0 +1,32 @@
+<div class="accounts_right">
+  <div class="backgroundBlur" *ngIf="cardCancelConfirmation">
+    <div class="paymentCardCancel">
+      <p>Are you sure want to un-link your {{userCardType}} card from Dulcet?</p>
+      <p>If you sure click <b>OK</b> it will be removed otherwise click <b>Cancel</b> to restore it.</p>
+      <div class="buttons">
+        <div><button (click)="removeUserPaymentCard()">OK</button></div>
+        <div><button (click)="closeCardCancelConfirmation()">Cancel</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="noPaymentCard" *ngIf="noPaymentCardDiv">
+    <p>You don't linked any cards here if you buy premium plans it will be shown here</p>
+  </div>
+  <div class="paymentCard" *ngIf="paymentCardDiv">
+    <i class="fa-solid fa-wifi fa-rotate-90"></i>
+    <div class="simImage">
+      <img src="/assets/home-images/cardSim.jpg">
+    </div>
+    <div class="cardDetails">
+      <p>{{userCardNumber}}</p>
+      <p>{{expiryDate}}</p>
+    </div>
+    <div class="cardType">
+      <p>{{cardHolderName}}</p>
+      <img src="{{cardImage}}">
+    </div>
+</div>
+<div class="cancelCard" *ngIf="paymentCardDiv">
+  <button (click)="openCardCancelConfirmation()">Cancel</button>
+</div>
+</div>

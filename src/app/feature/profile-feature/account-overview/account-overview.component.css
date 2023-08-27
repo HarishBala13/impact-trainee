@@ -1,0 +1,42 @@
+.background{
+  display: grid;
+  place-items: center;
+  padding: 3rem;
+  background-color: rgb(45, 47, 47);
+}
+
+.fa-solid{
+  font-size: 0.6cm;
+  cursor:pointer;
+}
+
+.accounts_right{
+  background-color: #fff;
+  color: #7f7f7f;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.accounts_right .account_overview{
+  text-align: center;
+  font-size: 0.6cm;
+  font-weight: 900;
+  color: #000;
+  padding: 20px 30px;
+}
+.accounts_right .profile{
+  font-size: 0.60cm;
+  font-weight: 600;
+  color: rgb(5, 218, 58);
+  padding: 20px 15px;
+}
+.accounts_right table{
+  font-size: 20px;
+  border-spacing: 5px;
+}
+
+.accounts_right tr td, .accounts_right tr th{
+  border: 3px solid #7f7f7f;
+  border-radius: 30px;
+  /* color: rgb(12, 221, 240); */
+}

@@ -1,0 +1,9 @@
+<header>
+  <a routerLink=""><img src="/assets/brand-images/whiteBGBrandLogo.png" alt="" class="brandlogo"></a>
+  <a routerLink="/search">Search</a>
+  <a routerLink="/playlists">Playlist</a>
+  <a routerLink="/premium">Premium</a>
+  <a routerLink="/signin" *ngIf="checkUserLogin" class="loginButton">Login</a>
+  <a *ngIf="checkedUserLoggedinNavbar" routerLink="/profile"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Profile</a>
+  <a *ngIf="checkedUserLoggedinNavbar" class="loginButton" (click)="logout()">Logout</a>
+</header>

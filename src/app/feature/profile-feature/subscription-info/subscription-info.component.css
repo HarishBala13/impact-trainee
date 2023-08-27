@@ -1,0 +1,84 @@
+.accounts_right{
+  /* background-color: #fff; */
+  color: #7f7f7f;
+  display: flex;
+  flex-direction: column;
+}
+/* .grid_premium_plan_card .plan_details{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rem;
+} */
+.grid_premium_plan_card .plan_details div p{
+  font-size: 1.5rem;
+  font-size: 700;
+  color: #000;
+}
+.grid_premium_plan_card .plan_details div a{
+  font-size: 15px;
+  font-size: bolder;
+  color: #000;
+  cursor: pointer;
+}
+.grid_premium_plan_card{
+  display: grid;
+  place-items: center;
+}
+.grid_premium_plan_card .premium_plan_card{
+  box-shadow: 0px 5px 20px 4px rgba(22, 22, 22, 0.874);
+}
+.grid_premium_plan_card .premium_plan_card .flexSpacearound{
+  display: flex;
+  justify-content: space-around;
+}
+.grid_premium_plan_card .premium_plan_card .grid_column_centerBG{
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  background-color: #84b7eb;
+}
+.grid_premium_plan_card .premium_plan_card .grid_column_center{
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  background-color: #fff;
+}
+.grid_premium_plan_card .premium_plan_card .grid_column_centerBG .bold{
+  font-weight: 700;
+  font-size: 15px;
+  color: black;
+}
+.grid_premium_plan_card .premium_plan_card .grid_column_centerBG .bolder{
+  font-size: 20px;
+  font-weight: 900;
+  color: black;
+}
+.grid_premium_plan_card .premium_plan_card img{
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+}
+.grid_premium_plan_card .premium_plan_card .grid_column_center .normal,
+.grid_premium_plan_card .premium_plan_card .grid_column_centerBG .normal{
+  font-size: 15px;
+  color: black;
+}
+.grid_premium_plan_card .premium_plan_card ul{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  background-color: #fff;
+  padding-right: 12px;
+}
+.grid_premium_plan_card .premium_plan_card ul li{
+  color: #000;
+}
+.grid_premium_plan_card .premium_plan_card .grid_column_center .green{
+  font-size: 20px;
+  font-weight: 900;
+  color: green;
+}
+.grid_premium_plan_card .premium_plan_card .grid_column_center .red{
+  font-size: 20px;
+  font-weight: 900;
+  color: red;
+}

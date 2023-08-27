@@ -1,0 +1,130 @@
+.grid-container .div1 {
+  background-color: rgb(21, 123, 241);
+  font-size: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  margin-top: 6rem;
+}
+.div1 a,  .div2 a{
+  text-decoration: none;
+  border: 3px solid white;
+  padding: 15px;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+  scale: 1.05;
+  font-size: 25px;
+  font-weight: 500;
+}
+.div1 a:hover,.div2 a:hover{
+  cursor: pointer;
+  scale: 1.15;
+}
+
+.grid-container .div2 {
+  background-color: rgb(1, 4, 4);
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+.grid-container .div3{
+  background-color: #efefef;
+  margin-top: -2.25rem;
+}
+.grid-container .div3 .premiumPlansContainer p{
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+  text-align: center;
+  color: black;
+  font-size: 1cm;
+  font-weight: 600;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 2rem;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer{
+  padding: 1rem;
+  width: 20vw;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 8px 4px  rgba(199, 182, 182, 0.874);
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .one-time{
+  width: 10%;
+  background-color: rgb(126, 249, 249);
+  color:black;
+  padding: 10px;
+  border-radius: 10px;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .box1,
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .box2{
+  padding: 0.5rem;
+  font-size:  0.5cm;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .box1 b{
+  font-size:  0.75cm;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .button {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .button button{
+  font-size:  0.5cm;
+  font-weight: bold;
+  background-color: #000;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 8px 4px  rgba(199, 182, 182, 0.874);
+  width: auto;
+  cursor: pointer;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .button button a{
+  color: #fff;
+  text-decoration: none;
+}
+.coupon{
+  text-align: center;
+  padding: 1rem;
+}
+span{
+  font-weight: 600;
+  color: white;
+}
+p{
+  font-size: 20px;
+  padding: 25px;
+  font-weight: 100;
+  color: white;
+}
+.coupon label{
+  font-weight: bold;
+  font-size: 0.9cm;
+  font-weight: 500;
+}
+.coupon input{
+  color: rebeccapurple;
+  font-size: 0.6cm;
+}
+@media only screen and (min-width : 500px) and (max-width: 990px){
+  .grid-container .div3 .premiumPlansContainer .gridRow{
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+  }
+  .grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer{
+    width: auto;
+    margin: 20px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 8px 4px  rgba(199, 182, 182, 0.874);
+  }
+}
