@@ -10,10 +10,9 @@
   padding: 1rem;
 }
 .accounts_right .profileContainer .profileBox{
-  /* background-color: rgb(54, 49, 49); */
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .accounts_right .profileContainer .profileBox .profileImage img{
   width: 150px;
@@ -32,31 +31,44 @@
 .accounts_right .profileEditor{
   background-color: rgba(142, 140, 137,0.2);
   border-radius: 20px;
+  padding: 2rem;
+  transition: 2s;
 }
 .accounts_right .profileHeads{
   display: flex;
-  justify-content: space-around;
-  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
 .accounts_right .profileEditor .profileForm .small{
   color: #c80d0d;
   font-size: 0.34cm;
   font-weight: bolder;
 }
-.accounts_right .profileEditor .profileForm, .accounts_right .profileEditor .profileButton{
+.accounts_right .profileEditor .profileForm .inputBoxes{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.accounts_right .profileEditor .profileForm .inputBoxes input{
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 4px 4px 3px  rgba(199, 182, 182, 0.874);
+  border-radius: 20px;
+  padding: 15px;
+  border: none;
+}
+.accounts_right .profileEditor .profileForm form .profileButton{
   display: grid;
   place-items: center;
-  padding: 1rem;
+  margin-top: 20px;
 }
 .accounts_right .profileEditor .profileButton button{
   background-color: #00ff00;
-  color: black;
   border-radius: 30px;
   border: none;
-  width: 80px;
+  width: 30%;
   height: 40px;
-}
-.accounts_right .profileEditor .profileButton button:hover{
+  font-size: 15px;
   box-shadow: 0px 2px 3px 5px rgb(76, 75, 75);
 }
 .accounts_right .profileHeads .name, .accounts_right .profileHeads .fa-solid{

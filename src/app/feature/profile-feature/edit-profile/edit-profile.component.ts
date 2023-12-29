@@ -16,7 +16,7 @@ export class EditProfileComponent {
   userProfileDiv : boolean = true;
   userProfileFile : any='';
   profileImagePath : any='';
-  userProfileImage : any='/assets/images/person.png';
+  userProfileImage : any='/assets/home-images/person.png';
   profiles : any='';
   date : any = '';
   today : any = '';

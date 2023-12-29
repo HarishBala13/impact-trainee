@@ -78,6 +78,7 @@
   </div>
 </div>
 
+
 <div *ngIf="openPlaylistDiv" class="playlistDiv">
   <a (click)="createPlaylist()">Create a new playlist</a>
   <a (click)="createAnotherPlaylist()">Create another playlist</a>
@@ -85,8 +86,15 @@
 </div>
 
 <div class="slidePlaylistDIV" *ngIf="openNewPlaylist">
-  <div class="close" (click)="closePlaylist()">&nbsp;&nbsp;&times;</div>
-  <p class="heading">About to create a new playlist like #myPlaylist_1</p>
+  <div class="top">
+    <div class="close" (click)="closePlaylist()">&nbsp;&nbsp;&times;</div>
+    <div class="heading">About to create a new playlist like #myPlaylist_1</div>
+    <div class="heading">myPlaylist_1</div>
+    <div class="changeplaylistname">
+      <button>Change name</button>
+    </div>
+  </div>
+  <div class="horizontalLine"></div>
   <div class="gridPlaylistDiv">
     <div><p>#</p></div>
     <div><p>Title</p></div>
@@ -104,7 +112,8 @@
    </div>
    <div id="">{{source.duration}}</div>
    <div class="gridColumnsCenter">
-    <button (click)="addSongsToPlaylist(source)">Add</button>
+    <button (click)="addSongsToPlaylist(source,i)" class="add">Add</button>
+    <button *ngIf="openAddedButton" class="added">Added</button>
     <i class="fa-solid fa-heart" (click)="addToFavouritesSongs(source)" ngClass="{'liked' : !toggled, 'untouched': toggled}"></i>
   </div>
   </div>
@@ -130,7 +139,7 @@
    </div>
    <div id="">{{source.duration}}</div>
    <div class="gridColumnsCenter">
-    <button (click)="addSongsToPlaylist(source)">Add</button>
+    <button (click)="addSongsToPlaylist(source,i)">Add</button>
     <i class="fa-solid fa-heart" (click)="addToFavouritesSongs(source)" ngClass="{'liked' : !toggled, 'untouched': toggled}"></i>
   </div>
   </div>
@@ -156,15 +165,15 @@
     </div>
     <div class="box2">
       <div class="icon">
-        <button (click)="playSong()" id="previous"><i class="bi bi-play-fill" id="masterPlay"></i></button>
-        <button (click)="pauseSong()" id="previous"><i class="bi bi-pause-fill" id="masterPlay"></i></button>
-        <button (click)="previousSong()" id="play"><i class=" bi bi-skip-start-fill"  id="masterPlay"></i></button>
-        <button (click)="nextSong()" id="next"><i class="bi bi-skip-end-fill" id="next"></i></button>
+        <button title="play" (click)="playSong()"><i class="bi bi-play-fill" id="masterPlay"></i></button>
+        <button title="pause" (click)="pauseSong()"><i class="bi bi-pause-fill" id="masterPlay"></i></button>
+        <button title="previous" (click)="previousSong()"><i class=" bi bi-skip-start-fill"  id="masterPlay"></i></button>
+        <button title="next" (click)="nextSong()"><i class="bi bi-skip-end-fill" id="next"></i></button>
       </div>
-      <div class="box1">
+      <div class="box3">
         <div id="currentStart">0:00</div>
         <div class="bar">
-            <input type="range" id="seek" min="0" value="0" max="100" style="color: white;">
+            <input title="seekmusic" type="range" id="seek" min="0" value="0" max="100" style="color: white;">
             <div class="bar2" id="bar2"></div>
             <div class="dot"></div>
         </div>
@@ -174,7 +183,7 @@
 
   <div class="vol">
       <i class="bi bi-volume-down-fill" id="vol_icon"></i>
-      <input type="range" id="vol" min="0" value="30" max="100">
+      <input title="volume" type="range" id="vol" min="0" value="30" max="100">
       <div class="vol_bar"></div>
       <div class="dot" id="vol_dot"></div>
   </div>

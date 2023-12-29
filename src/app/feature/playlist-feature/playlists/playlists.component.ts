@@ -19,6 +19,7 @@ export class PlaylistsComponent {
   openVikramIIDiv : boolean = false;
   userPlaylist : boolean = false;
   openPlaylistDiv : boolean = false;
+  openAddedButton : boolean = false;
   toggled = true;
   toggle = true;
   status = 'Enable';
@@ -275,13 +276,15 @@ export class PlaylistsComponent {
   }
 
   addToFavouritesSongs(songsObject:any){
+    console.log("touched"+this.toggled+" "+this.status);
     this.toggled = ! this.toggled;
-    this.status = this.toggled ? 'Enable' : 'Disable';
+    this.status = this.toggled ? 'Disable' : 'Enable';
     this.songService.addToFavouritesSongsFromPlaylist(songsObject,this.JSONID);
   }
 
-  addSongsToPlaylist(playlistSongs:any){
+  addSongsToPlaylist(playlistSongs:any,index:any){
     this.songService.addSongsToUserPlaylist(playlistSongs,this.JSONID);
+    this.openAddedButton = true;
   }
 
 

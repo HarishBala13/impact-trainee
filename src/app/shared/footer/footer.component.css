@@ -12,6 +12,107 @@
   text-decoration: none;
   color: #fff;
 }
+.bottom-contents{
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ padding: 10px;
+}
+.company .company-details,.communities .community-details{
+  display: flex;
+  flex-direction: column;
+}
+.company p,.communities p{
+  padding-top: 20px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.7cm;
+}
+.company a,.communities a{
+  font-size: 0.5cm;
+  padding: 1rem;
+  color: #9a9a9a;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+.social-media-links{
+  display: flex;
+  flex-direction: column;
+}
+.brandlogo{
+  display: grid;
+  place-items: center;
+}
+.brandlogo img{
+  width: 250px;
+  height: 150px;
+}
+.bottom-contents .social-media-links a{
+  text-decoration: none;
+  color: #9a9a9a;
+  font-size: 0.5cm;
+  cursor: pointer;
+}
+.bottom-contents .social-media-links i{
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 0.7cm;
+}
+
+@media only screen and (max-width: 640px) {
+  .footer{
+    width: 100%;
+  }
+  .company .company-details, .communities .community-details{
+    display: flex;
+    flex-direction: column;
+  }
+  .company p,.communities p{
+    font-size: 24px;
+  }
+  .company a,.communities a{
+    font-size: 18px;
+    padding: 20px;
+  }
+  .bottom-contents{
+    grid-template-columns: repeat(6, 2fr);
+   }
+  .social-media-links{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .social-media-links a i{
+    font-size: 14px;
+  }
+  .bottom-contents{
+    display: flex;
+    flex-direction: column;
+  }
+  .footer .copyrights{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+
+/* .footer{
+  background-color: #121212;
+  color: #9a9a9a;
+  font-size: 0.50cm;
+}
+.footer .copyrights{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer .copyrights div p a{
+  text-decoration: none;
+  color: #fff;
+}
 .bottom_contents{
  display: grid;
  grid-template-columns: repeat(4,1fr);
@@ -58,4 +159,4 @@
   border-radius: 50%;
   padding: 15px;
   font-size: 0.7cm;
-}
+} */

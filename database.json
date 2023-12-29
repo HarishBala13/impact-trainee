@@ -293,6 +293,120 @@
           "premiumPlanPrice": "₹240",
           "userState": "Goa"
         }
+      ],
+      "likedSongs": [
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "Agent Tina Theme",
+          "images": "/assets/songs-assets/songs-images/Agent-Tina.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Agent-Tina-(Background-Score)-MassTamilan.dev.mp3",
+          "id": 2
+        },
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "Agent Tina Theme",
+          "images": "/assets/songs-assets/songs-images/Agent-Tina.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Agent-Tina-(Background-Score)-MassTamilan.dev.mp3",
+          "id": 2
+        },
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "Agent Vikram",
+          "images": "/assets/songs-assets/songs-images/Agent-Vikram.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Agent-Vikram-(Background-Score)-MassTamilan.dev.mp3.mp3",
+          "id": 3
+        },
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "Plata Pablo Theme",
+          "images": "/assets/songs-assets/songs-images/VikramOST.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Pablo-Sandhanam-(Background-Score)-MassTamilan.dev.mp3",
+          "id": 1
+        },
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "Plata Pablo Theme",
+          "images": "/assets/songs-assets/songs-images/VikramOST.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Pablo-Sandhanam-(Background-Score)-MassTamilan.dev.mp3",
+          "id": 1
+        },
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "Agent Tina Theme",
+          "images": "/assets/songs-assets/songs-images/Agent-Tina.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Agent-Tina-(Background-Score)-MassTamilan.dev.mp3",
+          "id": 2
+        },
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "Agent Amar Theme",
+          "images": "/assets/songs-assets/songs-images/Agent-Amar.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Amar-Theme-(Background-Score)-MassTamilan.dev.mp3",
+          "id": 5
+        },
+        {
+          "movie_name": "LEO",
+          "song_name": "Bloody Sweet",
+          "images": "/assets/songs-assets/songs-images/bloody sweet.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Bloody-Sweet-MassTamilan.dev.mp3",
+          "id": 2
+        },
+        {
+          "movie_name": "LEO",
+          "song_name": "Bloody Sweet",
+          "images": "/assets/songs-assets/songs-images/bloody sweet.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Bloody-Sweet-MassTamilan.dev.mp3",
+          "id": 2
+        },
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "Agent Tina Theme",
+          "images": "/assets/songs-assets/songs-images/Agent-Tina.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Agent-Tina-(Background-Score)-MassTamilan.dev.mp3",
+          "id": 2
+        },
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "Plata Pablo Theme",
+          "images": "/assets/songs-assets/songs-images/VikramOST.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Pablo-Sandhanam-(Background-Score)-MassTamilan.dev.mp3",
+          "id": 1
+        },
+        {
+          "movie_name": "LEO",
+          "song_name": "Bloody Sweet",
+          "images": "/assets/songs-assets/songs-images/bloody sweet.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Bloody-Sweet-MassTamilan.dev.mp3",
+          "id": 2
+        },
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "Agent Tina Theme",
+          "images": "/assets/songs-assets/songs-images/Agent-Tina.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Agent-Tina-(Background-Score)-MassTamilan.dev.mp3",
+          "id": 2
+        },
+        {
+          "movie_name": "Vikram - II",
+          "song_name": "The Shield fight",
+          "images": "/assets/songs-assets/songs-images/Shield Fight.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Shield-Fight-(Background-Score)-MassTamilan.dev.mp3",
+          "id": 11
+        },
+        {
+          "movie_name": "LEO",
+          "song_name": "Naa Ready Dhaan",
+          "images": "/assets/songs-assets/songs-images/LEO-Naa-Ready-Song.png",
+          "audios": "/assets/songs-assets/songs-audios/Naa-Ready-MassTamilan.dev.mp3",
+          "id": 1
+        },
+        {
+          "movie_name": "Jailer",
+          "song_name": "Muthuvel theme",
+          "images": "/assets/songs-assets/songs-images/Jailer.jpg",
+          "audios": "/assets/songs-assets/songs-audios/Jailer-Announcement-Theme-MassTamilan.dev.mp3",
+          "id": 1
+        }
       ]
     },
     {

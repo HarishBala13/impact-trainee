@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Karma:wght@500&display=swap');
-.card_container{
-  margin-top: 7%;
-}
 .title_head{
   display: flex;
   justify-content: space-around;
@@ -102,7 +99,6 @@
   height: 85%;
   bottom: -30%;
   display: flex;
-  -moz-box-pack: center;
   justify-content: center;
 }
 .sectionFlexContainer .displayingImage .svgDesignedImage img{
@@ -116,7 +112,6 @@
   right: 46%;
   bottom: 1%;
   display: flex;
-  -moz-box-pack: center;
   justify-content: center;
 }
 .sectionFlexContainer .displayingContent p{
@@ -182,7 +177,6 @@
   height: 535px;
   bottom: -133px;
   display: flex;
-  -moz-box-pack: center;
   justify-content: center;
 }
 .sectionGridContainer .serviceProviding .divImage img{
