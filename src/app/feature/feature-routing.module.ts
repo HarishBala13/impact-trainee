@@ -1,3 +1,7 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home-feature/home/home.component';
@@ -19,6 +23,8 @@ import { AccountOverviewComponent } from './profile-feature/account-overview/acc
 import { PremiumComponent } from './premium-feature/premium/premium.component';
 import { PaymentComponent } from './payment-feature/payment/payment.component';
 import { PaymentSuccessComponent } from './payment-feature/payment-success/payment-success.component';
+import { SearchedItemsComponent } from './search-feature/searched-items/searched-items.component';
+import { SearchedPlaylistsComponent } from './search-feature/searched-playlists/searched-playlists.component';
 
 
 const routes: Routes = [
@@ -45,8 +51,18 @@ const routes: Routes = [
    },
    {
     path:'search',
-    component:SearchComponent,
-    title:'Dulcet - Search'
+    component:SearchedItemsComponent,
+    title:'Dulcet - Search',
+   },
+   {
+    path:'',
+    children:[
+      {
+        path:'searched-playlists/:searchedArtist',
+        component:SearchedPlaylistsComponent,
+        title:'Dulcet - Searched Playlists'
+      }
+    ]
    },
    {
     path:'topsongs',
@@ -76,7 +92,8 @@ const routes: Routes = [
    {
     path:'payment',
     component:PaymentComponent,
-    title:'Dulcet - Payment'
+    canActivate:[UserAuthguardGuard],
+    title:'Dulcet - Payment',
    },
    {
     path:'paymentsuccess',

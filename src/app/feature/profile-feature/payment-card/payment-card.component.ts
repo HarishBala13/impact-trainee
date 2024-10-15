@@ -1,3 +1,7 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 import { Component } from '@angular/core';
 import { PaymentService } from 'src/app/core-services/payment-service/payment.service';
 
@@ -12,7 +16,8 @@ export class PaymentCardComponent {
   expiryDate:any=' ';
   userCardNumber:any=' ';
   userCardType:any=' ';
-  cardImage:any=' ';
+  cardTypeTitle:any=' ';
+  cardImage:string='';
   cardHolderName:any=' ';
   paymentCardDiv : boolean = false;
   noPaymentCardDiv : boolean = false;
@@ -36,7 +41,12 @@ export class PaymentCardComponent {
       this.userCardType = this.cardDetails.paymentCard[0].cardType;
       this.cardImage = this.cardDetails.paymentCard[0].cardImage;
       this.cardHolderName = this.cardDetails.paymentCard[0].cardHolderName;
-      console.log(this.cardDetails.paymentCard);
+      if(this.cardImage.includes('visa')){
+        this.cardTypeTitle = 'VISA';
+      }
+      else{
+        this.cardTypeTitle = 'MASTERCARD';
+      }
       this.paymentCardDiv = true;
       this.noPaymentCardDiv = false;
     }

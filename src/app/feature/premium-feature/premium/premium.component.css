@@ -1,29 +1,13 @@
 .grid-container .div1 {
-  background-color: rgb(21, 123, 241);
+  background: linear-gradient(120deg, #0a3290,#820dd5, #e508a3);
   font-size: 30px;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem;
+  padding: 30px;
 }
-.div1 a,  .div2 a{
-  text-decoration: none;
-  border: 3px solid white;
-  padding: 15px;
-  color: white;
-  background-color: black;
-  border-radius: 50px;
-  scale: 1.05;
-  font-size: 25px;
-  font-weight: 500;
-}
-.div1 a:hover,.div2 a:hover{
-  cursor: pointer;
-  scale: 1.15;
-}
-
 .grid-container .div2 {
   background-color: rgb(1, 4, 4);
   font-size: 30px;
@@ -31,14 +15,49 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem;
+  padding: 30px;
 }
 .grid-container .div3{
-  background-color: #efefef;
-  margin-top: -2.25rem;
+  margin-top: 2.25rem;
 }
+.div1 p{
+  width: 600px;
+}
+.div1 .plansLink a{
+  border: 0;
+  color: black;
+  background-color: white;
+}
+.div1 .plansLink .viewPlans {
+  color: white;
+  border:3px solid white;
+  background: transparent;
+}
+.div1 a, .div2 a{
+  text-decoration: none;
+  border: 3px solid white;
+  padding: 15px;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+  scale: 0.75;
+  font-size: 25px;
+  font-weight: 800;
+  width: 20%;
+  text-align: center;
+}
+.div1 a:hover,.div2 a:hover{
+  cursor: pointer;
+  scale: 0.78;
+}
+.grid-container .div1 .plansLink{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid-container .div3 .premiumPlansContainer p{
-  font-family: 'Times New Roman', Times, serif;
   letter-spacing: 1px;
   text-align: center;
   color: black;
@@ -47,14 +66,42 @@
 }
 .grid-container .div3 .premiumPlansContainer .gridRow{
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto;
+  place-items: center;
   padding: 2rem;
+  gap: 4rem;
 }
 .grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer{
   padding: 1rem;
   width: 20vw;
   background-color: #ffffff;
+  border-radius: 15px;
   box-shadow: 5px 5px 8px 4px  rgba(199, 182, 182, 0.874);
+  position: relative;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .premiumPlanOfferDiv{
+  /* background: linear-gradient(to right, violet, pink); */
+  background: linear-gradient(120deg, #0a3290,#820dd5, #e508a3);
+  color: white;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 60%;
+  height: 25px;
+  text-align: center;
+  border-radius: 15px 0px 15px 0px;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .imageContent{
+  display: flex;
+  align-items: center;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .imageContent img{
+  height: 35px;
+  width: 55px;
+}
+.grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .imageContent p{
+  font-size: 0.45cm;
+  letter-spacing: 0px;
 }
 .grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .one-time{
   width: 10%;
@@ -77,32 +124,34 @@
   padding: 1rem;
 }
 .grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .button button{
-  font-size:  0.5cm;
-  font-weight: bold;
   background-color: #000;
   color: #fff;
   padding: 1rem;
   border-radius: 30px;
   box-shadow: 5px 5px 8px 4px  rgba(199, 182, 182, 0.874);
-  width: auto;
+  width: 100%;
+  border: 0;
   cursor: pointer;
 }
 .grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer .button button a{
   color: #fff;
   text-decoration: none;
+  font-size:  0.45cm;
+  font-weight: 400;
 }
 .coupon{
   text-align: center;
   padding: 1rem;
 }
 span{
-  font-weight: 600;
+  letter-spacing: 2px;
+  font-weight: 800;
   color: white;
 }
 p{
   font-size: 20px;
-  padding: 25px;
-  font-weight: 100;
+  font-weight: 300;
+  letter-spacing: 1px;
   color: white;
 }
 .coupon label{
@@ -114,14 +163,28 @@ p{
   color: rebeccapurple;
   font-size: 0.6cm;
 }
-@media only screen and (min-width : 500px) and (max-width: 990px){
+
+
+@media only screen and (max-width : 500px){
+  .grid-container .div1, .grid-container .div2, .grid-container .div3{
+    padding: 20px;
+  }
+  .grid-container .div1 a, .grid-container .div2 a, .grid-container .div3 a{
+    width: 40%;
+  }
+  span{
+    letter-spacing: 1px;
+  }
+  .div1 p{
+    width: 400px;
+  }
   .grid-container .div3 .premiumPlansContainer .gridRow{
     display: grid;
     grid-template-columns: auto;
     place-items: center;
   }
   .grid-container .div3 .premiumPlansContainer .gridRow .gridPremiumPlanContainer{
-    width: auto;
+    width: 300px;
     margin: 20px;
     background-color: #ffffff;
     box-shadow: 5px 5px 8px 4px  rgba(199, 182, 182, 0.874);

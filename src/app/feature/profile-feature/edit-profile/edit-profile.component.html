@@ -2,19 +2,18 @@
   <div class="profileContainer" *ngIf="userProfileDiv">
     <div class="profileBox">
       <div class="profileImage">
-        <img src="{{userProfileImage}}" alt="userimage" (click)="openEditUserProfileDiv()">
+        <img src="{{userDefaultProfileImage}}" alt="userimage" (click)="openEditUserProfileDiv()">
       </div>
       <div class="profileName" (click)="openEditUserProfileDiv()"><p>{{profileName}}</p></div>
     </div>
   </div>
   <div class="profileEditor" *ngIf="editProfile">
     <div class="profileHeads">
-      <p class="name">Edit User Profile</p>
+      <p class="name">Edit your Profile</p>
       <i class="fa-solid" (click)="closeEditUserProfileDiv()">&times;</i>
     </div>
     <div class="profileForm">
       <form #editProfileForm="ngForm">
-
         <div class="inputBoxes">
           <div>
             <input title="image" type="file" name="userProfileImage" ngModel #userProfileImage="ngModel" required  single (change)="userProfile($event)">
@@ -25,7 +24,7 @@
           <!-- <input type="file" class="userProfileImage" formControlName="userProfileImage" single (change)="userProfile($event)">
           <small class="small" *ngIf="editProfileForm.controls['userProfileImage'].errors?.['required'] && editProfileForm.controls['userProfileImage'].dirty">* Name is required</small> -->
           <div>
-            <input title="name" placeholder="Enter your name to update" type="text" ngModel #editProfileName="ngModel" name="editProfileName" required pattern="^(?!.(.).\1{2})[a-zA-Z][a-zA-Z0-9_-]{3,15}$">
+            <input title="name" type="text" name="editProfileName" ngModel #editProfileName="ngModel" required placeholder="Enter your name to update" pattern="^(?!.(.).\1{2})[a-zA-Z][a-zA-Z0-9_-]{3,15}$">
             <div *ngIf="editProfileName.touched">
               <small class="small" *ngIf="editProfileName.errors?.['required']">* Name is required</small>
               <!-- <small class="small" *ngIf="editProfileName.errors?.['pattern']">* Please provide a proper name</small> -->

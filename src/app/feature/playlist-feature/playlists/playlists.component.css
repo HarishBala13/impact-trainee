@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 @import url('/src/songtrack.css');
+@import url('/src/songcards.css');
 .songs_container{
   width: auto;
   height: 80px;
@@ -135,6 +136,12 @@
 .untouched {
   color: rgb(92, 91, 90);
 }
+.playlist_container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  padding: 2rem;
+}
 .playlistHead{
   display: grid;
   place-items: center;
@@ -154,15 +161,22 @@
   padding-bottom: 6px;
   border-bottom: 3px solid #00ff00;
 }
+.playlist-container .flexPlaylistHeads div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.playlist-container .flexPlaylistHeads div p{
+  color: #000;
+  font-weight: 600;
+  font-size: 20px;
+}
 .playlist-container .flexPlaylistHeads a{
   font-size: 22px;
   font-weight: 500;
   color: black;
   text-decoration: none;
   cursor: pointer;
-  border: 2px solid #999;
-  border-radius: 30px;
-  padding: 10px 20px;
 }
 .playlistDiv{
   display: flex;
@@ -243,35 +257,21 @@
   width: 50%;
   height: 100%;
 }
-.top{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.slidePlaylistDIV .top .heading{
+.slidePlaylistDIV .heading{
   text-align: center;
   background-color: #121212;
   color: white;
-  font-size: 0.75cm;
+  font-size: 25px;
   font-weight: 600;
   padding-bottom: 14px;
 }
-.slidePlaylistDIV .top .close{
+.slidePlaylistDIV .close{
   display: flex;
   font-size: 1cm;
   color: #fefefe;
   background-color: #121212;
   cursor: pointer;
-}
-.slidePlaylistDIV .top .changeplaylistname button{
-  cursor: pointer;
-  background-color: #121212;
-  border: 1px solid #fefefe;
-  outline: none;
-  color: #fefefe;
-  padding: 10px;
-  font-size: 0.4cm;
-  border-radius: 20px;
+  padding: 5px;
 }
 .slidePlaylistDIV .gridPlaylistDiv div p{
   font-size: 15px;
@@ -306,14 +306,6 @@
   grid-template-columns: repeat(2, 2fr);
   gap: 0.5rem;
   place-items: center;
-}
-.slidePlaylistDIV .gridPlaylistDiv .gridColumnsCenter .add{
-  cursor: pointer;
-}
-.slidePlaylistDIV .gridPlaylistDiv .gridColumnsCenter .added{
-  background: #00ff00;
-  color: #000;
-  cursor: pointer;
 }
 .slidePlaylistDIV .gridPlaylistDiv .gridColumns .maintitle{
   line-height: 25px;
@@ -362,3 +354,5 @@
   font-size: 0.5cm;
   font-weight: 400;
 }
+
+

@@ -5,6 +5,11 @@
   display: grid;
   place-items: center;
   min-height: 100vh;
+  width: 100vw;
+  background: url('../../../../assets/home-images/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .fa-music{
   color: #00f000;
@@ -22,7 +27,7 @@
 }
 .form{
   width: 25rem;
-  top: -20%;
+  /* top: -20%; */
   /* height: 50vh; */
   background: rgb(255, 255, 255);
   box-shadow: 0px 5px 20px 4px rgba(22, 22, 22, 0.874);
@@ -33,7 +38,10 @@
   font-family: 'Space Grotesk', sans-serif;
   color: black;
   text-align: center;
-  padding: 10px;
+  /* padding: 10px; */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 30px;
 }
 .icon{
  margin-left: 10%;
@@ -42,8 +50,8 @@
 .fa-circle-xmark{
   position: absolute;
   left: 85%;
-  top: 8%;
-  font-size: 0.55cm;
+  top: 3%;
+  font-size: 0.75cm;
 }
 .form .flex .fa-arrow-rotate-right{
   font-size: small;
@@ -83,12 +91,12 @@ input:focus{
 .fa-eye-slash,.fa-eye{
   position: absolute;
   left: 80%;
-  bottom: 51%;
+  bottom: 50%;
   font-size: 0.35cm;
+  transition: all 0.5s ease;
 }
 .form .flex{
-  display: flex;
-  justify-content: space-evenly;
+  text-align: center;
 }
 .form .small{
   color: #c80d0d;
@@ -115,13 +123,15 @@ input:focus{
   padding: 1rem;
 }
 .form .forgot{
-  margin-left: 10%;
+  margin-bottom: 10px;
+  margin-left: 50%;
   display: block;
   padding: 2%;
   font-size:  0.5cm;
   color: black;
 }
 .form .forgot:hover, .form .signup:hover{
+  transition: all 400ms;
   color: rebeccapurple;
 }
 
@@ -132,9 +142,11 @@ input:focus{
 }
 .form .flex button{
   border: none;
+  width: 60%;
   font-size:  0.5cm;
   font-weight: bold;
-  background-color: khaki;
+  background-color: rebeccapurple;
+  color: white;
   padding: 1rem;
   border-radius: 30px;
   box-shadow: 5px 5px 8px 4px  rgba(199, 182, 182, 0.874);

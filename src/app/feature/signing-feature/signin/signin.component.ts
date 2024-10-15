@@ -1,3 +1,7 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from '@angular/router';
@@ -18,15 +22,16 @@ export class SigninComponent {
     private formBuilder:FormBuilder,
     private router:Router,private activate:ActivatedRoute){
       this.activate.queryParamMap.subscribe( x => {
+        console.log("x"+x);
         this.returl = x.get('returl');
-        // console.log(this.returl);
+        console.log(this.returl);
       })
       this.errormessage = this.userLogService.errorMessage;
      }
 
   loginForm = this.formBuilder.group({
-    email:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,5}$")]],
-    password:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:\{\\\}\\\[\\\]\\\|\\\+\\\-\\\=\\\_\\\)\\\(\\\)\\\`\\\/\\\\\\]])[A-Za-z0-9\d$@].{7,}`)]]
+    email:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$")]],
+    password:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]]
   })
 
 submitLoginForm(){

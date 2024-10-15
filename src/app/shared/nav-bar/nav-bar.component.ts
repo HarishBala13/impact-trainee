@@ -1,3 +1,7 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -32,6 +36,7 @@ export class NavBarComponent {
   logout() {
     if (confirm('Are you want to Logout ?') == true) {
       sessionStorage.setItem('isUserLoggedIn', 'false');
+      sessionStorage.setItem('onceSessionLogin','false');
       sessionStorage.removeItem('currentUserName');
       sessionStorage.removeItem('currentUserEmail');
       sessionStorage.removeItem('currentUserJSONID');

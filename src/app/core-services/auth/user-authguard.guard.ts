@@ -1,3 +1,7 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 
@@ -10,15 +14,14 @@ export class UserAuthguardGuard implements CanActivate {
 
   canActivate(  route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
-      if(sessionStorage.getItem('isUserLoggedIn')=="false"){
+      if(sessionStorage.getItem("isUserLoggedIn") === "false"){
         this.router.navigate(['signin'],{queryParams:{returl:route.url}});
         return false;
       }
-      else if(sessionStorage.getItem('isUserLoggedIn')=='true'){
+      else if(sessionStorage.getItem('isUserLoggedIn') === 'true'){
         return true;
       }
       else if(!sessionStorage.getItem("currentUserName")){
-        // console.log("Another tab SessionStorage works");
         this.router.navigate(['signin'], {queryParams: {returl: route.url}});
         return false;
       }

@@ -6,33 +6,73 @@
 }
  .paymentHeader{
   display: grid;
-  /* gap: 2rem; */
-  padding: 15px;
-  background-color: black;
+  /* background-color: black; */
 }
 .paymentHeader .userDetails{
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 1rem;
+  justify-content: space-evenly;
+  background-color: black;
+}
+.paymentHeader .userDetails a img{
+  height: 60px;
+  width: 85px;
+}
+.paymentHeader .userDetails div .profileIcons{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+.paymentHeader .userDetails div .profileIcons i:first-child{
+  margin-right: 15px;
+  font-size: 40px;
+}
+.paymentHeader .userDetails div .profileIcons i{
+  font-size: 16px;
+}
+.paymentHeader .userDetails div .profileIcons p{
+  margin-right: 10px;
+  font-weight: 900;
+  font-size: 16px;
+}
+.paymentHeader .userDetails div .profileIcons p:hover, .paymentHeader .userDetails div .profileIcons:hover{
+  color: #00ff00;
+}
+.paymentHeader .userDetails div .anchorLinks{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(186, 173, 173, 0.092);
+  z-index: 1;
+}
+.paymentHeader .userDetails div .anchorLinks li{
+  list-style-type: none;
+}
+.paymentHeader .userDetails div .anchorLinks li a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+.paymentHeader .gridPremiumPlanCard{
+  display: grid;
+  place-items: center;
 }
 .paymentHeader .gridPremiumPlanCard .planDetails{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  align-items: center;
   gap: 16rem;
 }
-.paymentHeader .gridPremiumPlanCard .planDetails div p{
+.paymentHeader .gridPremiumPlanCard .planDetails p{
   font-size: 1.5rem;
-  font-size: 700;
-  color: #fff;
+  font-size: 900;
+  color: #000;
 }
-.paymentHeader .gridPremiumPlanCard .planDetails div a{
+.paymentHeader .gridPremiumPlanCard .planDetails a{
   font-size: 15px;
-  font-size: bolder;
-  color: #fff;
   cursor: pointer;
+  color: #000;
 }
-.paymentHeader a img{
+/* .paymentHeader a img{
   width: 150px;
   height: 80px;
 }
@@ -45,35 +85,35 @@
   font-size: 25px;
   font-weight: 500;
   color: white;
-}
-.gridPremiumPlanCard{
-  display: grid;
-  place-items: center;
+} */
+.paymentHeader .gridPremiumPlanCard{
+  background-color: #0c67d3;
 }
 .paymentHeader .gridPremiumPlanCard .premiumPlanCard{
-  height: 33vh;
+  height: auto;
   width: 33vw;
   border-radius: 40px;
+  /* background-color: #0c67d3; */
 }
 .paymentHeader .gridPremiumPlanCard .premiumPlanCard .flexSpacearound{
   display: flex;
   justify-content: space-around;
-  padding: 0.4rem;
+  /* padding: 0.4rem; */
 }
 .paymentHeader .gridPremiumPlanCard .premiumPlanCard .gridColumnCenterBG{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center;
-  padding: 5px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 5px; */
   background-color: #a5bbd1;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .paymentHeader .gridPremiumPlanCard .premiumPlanCard .gridColumnCenter{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center;
-  padding: 5px;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  /* padding: 5px; */
   background-color: #fff;
 }
 .paymentHeader .gridPremiumPlanCard .premiumPlanCard .flexSpacearound .bold,
@@ -101,7 +141,7 @@
 }
 .paymentHeader .gridPremiumPlanCard .premiumPlanCard ul{
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 20px);
   background-color: #fff;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;

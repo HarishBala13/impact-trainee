@@ -1,7 +1,7 @@
-<app-nav-bar></app-nav-bar>
+<!-- <app-nav-bar></app-nav-bar> -->
 
 <div class="register_system">
-<div class="marqueeBox-1">
+<!-- <div class="marqueeBox-1">
   <marquee behavior="alternate" direction="up" scrolldelay="20" height="150px"><i class="fa-solid fa-music"></i></marquee>
   <marquee behavior="alternate" direction="down" scrolldelay="20" height="250px"><i class="fa-solid fa-music"></i></marquee>
   <marquee behavior="alternate" direction="left" scrollamount="30" width="1200px"><i class="fa-solid fa-music"></i></marquee>
@@ -10,7 +10,7 @@
 <div class="marqueeBox-2">
   <marquee behavior="alternate" direction="up" scrolldelay="20" height="150px"><i class="fa-solid fa-music"></i></marquee>
   <marquee behavior="alternate" direction="down" scrolldelay="20" height="250px"><i class="fa-solid fa-music"></i></marquee>
-</div>
+</div> -->
 
   <form class="register_form" [formGroup]="registerForm" (submit)="submitRegisterForm()">
     <i class="fa-solid fa-circle-xmark" (click)="closeRegisterForm()"></i>
@@ -28,17 +28,22 @@
 
     <i class="fa-solid fa-key icon"></i>
     <input type="password" class="password" placeholder="Enter your password" formControlName="regpassword"  #registerpasswordfield >
-    <i (click)="registerpasswordfield.type=registerpasswordfield.type=='password'?'text':'password'" class="fa fa-eye-slash regicon1"  ngClass="(registerpasswordfield.type=='password')?' fa-eye-slash':' fa-eye'"></i>
+    <i (click)="registerpasswordfield.type=registerpasswordfield.type=='password'?'text':'password'" class="fa-solid fa-eye-slash regicon1"  [ngClass]="(registerpasswordfield.type=='password')?' fa-eye-slash':' fa-eye'"></i>
     <small class="small" *ngIf="registerForm.controls['regpassword'].errors?.['required'] && registerForm.controls['regpassword'].dirty">* Password is required</small>
     <small class="small" *ngIf="registerForm.controls['regpassword'].errors?.['pattern']">* Provided password is not strong</small>
 
     <i class="fa-solid fa-key icon"></i>
     <input type="password" class="confirmpassword" placeholder="Re-type the password" formControlName="regconfirmpassword" #registerconfirmpasswordfield>
-    <i (click)="registerconfirmpasswordfield.type=registerconfirmpasswordfield.type=='password'?'text':'password'" class="fa fa-eye-slash regicon2" ngClass="(registerconfirmpasswordfield.type=='password')?' fa-eye-slash':' fa-eye'"></i>
+    <i (click)="registerconfirmpasswordfield.type=registerconfirmpasswordfield.type=='password'?'text':'password'" class="fa-solid fa-eye-slash regicon2" [ngClass]="(registerconfirmpasswordfield.type=='password')?' fa-eye-slash':' fa-eye'"></i>
     <small class="small" *ngIf="registerForm.controls['regconfirmpassword'].errors?.['required'] && registerForm.controls['regconfirmpassword'].dirty">* Password is required</small>
 
-    <i class="fa-solid fa-arrow-rotate-right icon" (click)="registerReset()">&nbsp;&nbsp;Reset</i>
-    <button [disabled]="!registerForm.valid">Submit</button>
+    <div class="actionButtons">
+      <div class="resetIcon">
+        <i class="fa-solid fa-arrow-rotate-right icon" (click)="registerReset()"></i>
+        <span>&nbsp;&nbsp;Reset</span>
+      </div>
+      <button [disabled]="!registerForm.valid">Submit</button>
+    </div>
 
     <span>Already&nbsp;an&nbsp;User&nbsp;?&nbsp;Click&nbsp;<a class="registers" routerLink="/signin">Login</a></span>
    </form>

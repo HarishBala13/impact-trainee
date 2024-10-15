@@ -1,3 +1,7 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 import { formatDate } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -34,6 +38,7 @@ export class PremiumService {
       },
       id: premiumPlan.id
     }
+    console.log(this.myPremiumPlansArray);
     this._http.get(environmentvalues.premium_url).subscribe((values:any) => {
       const findPremiumPlan = values.find( (newvalues:any) => {
         if(newvalues.id == premiumPlan.id){

@@ -5,9 +5,9 @@
   display: grid;
   place-items: center;
   min-height: 100vh;
-  /* background-image: url("/assets/images/backgroundImageRegLogin.png");
+  background-image: url("/assets/home-images/backgroundImageRegLogin.png");
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
 }
 .fa-music{
   color: #00f000;
@@ -34,7 +34,8 @@
   font-family: 'Space Grotesk', sans-serif;
   color: black;
   text-align: center;
-  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 .icon{
  margin-left: 14%;
@@ -43,7 +44,7 @@
 .fa-circle-xmark{
   position: absolute;
   left: 89%;
-  top: 3%;
+  top: 4%;
   font-size: 0.55cm;
 }
 .fa-circle-xmark:hover,
@@ -70,15 +71,20 @@ input{
 input:focus{
   outline: none;
 }
+.password, .confirmpassword{
+  position: relative;
+}
 .register_form .regicon1{
   position: absolute;
   left: 83%;
-  bottom: 50%;
+  bottom: 49%;
+  cursor: pointer;
 }
 .register_form .regicon2{
   position: absolute;
   left: 83%;
   bottom: 33%;
+  cursor: pointer;
 }
 .register_form .small{
   color: #c80d0d;
@@ -100,26 +106,36 @@ input:focus{
   color: black;
 }
 .fa-arrow-rotate-right{
-  font-size: 0.33cm ;
+  font-size: 0.4cm ;
+  color: #fff;
+}
+.register_form .actionButtons button{
+  border: none;
+  width: 50%;
+  padding: 1rem;
+  font-size: large;
   font-weight: bolder;
-  background-color: khaki;
-  color: #000;
+  background-color: rebeccapurple;
+  color: #fff;
   border-radius: 30px;
-  padding: 0.85rem;
-  text-transform: capitalize;
   box-shadow: 0px 4px 4px 3px  rgba(199, 182, 182, 0.874);
 }
-.register_form button{
-  border: none;
-  font-size: large;
-  width: 30%;
-  margin-left: 13%;
-  margin-bottom: 5%;
-  padding: 0.5rem;
-  font-weight: bolder;
-  background-color: khaki;
+
+.register_form .resetIcon{
+  display: flex;
+  align-items: center;
+  background-color: rebeccapurple;
+  width: 35%;
+  color: #fff;
   border-radius: 30px;
   box-shadow: 0px 4px 4px 3px  rgba(199, 182, 182, 0.874);
+  cursor: pointer;
+}
+.register_form .actionButtons{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
 }
 
 @media only screen and (max-width : 500px)

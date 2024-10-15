@@ -1,0 +1,78 @@
+<div class="searchedArtsistContainer">
+  <div class="searchedArtistCollage">
+    <div *ngFor="let img of randomAssets">
+      <img src="{{ img }}" alt="{{ img }}" title="{{ img }}" />
+    </div>
+  </div>
+  <div class="searchedPlayListContent">
+    <p>Playlist</p>
+    <h1>Vibeee pannu mamee</h1>
+    <p class="playListInfo">
+      {{ userSearchedSingersPlaylist.length }} songs ,
+      <span>about {{ totalDuration }}</span>
+    </p>
+  </div>
+</div>
+
+<div class="iconsContainer">
+  <div class="firstContainer">
+    <i class="fa-solid fa-play-circle tooltip">
+      <span class="tooltipText">Play Vibeee pannu mamee</span>
+    </i>
+    <i class="fa-solid fa-circle-plus tooltip">
+      <span class="tooltipText">Save to your Library</span>
+    </i>
+    <i class="fa-solid fa-ellipsis tooltip">
+      <span class="tooltipText">More options for Vibeee pannu mamee</span>
+    </i>
+  </div>
+  <div class="secondContainer">
+    <ng-template #defaultItem>
+      <p (click)="containerOpened()"><i class="fa-solid fa-list">&nbsp;&nbsp;&nbsp;&nbsp;</i>List</p>
+    </ng-template>
+
+    <div *ngIf="selectedPlayListType?.length == 2; else defaultItem">
+      <p><i class={{selectedPlayListType?.[1]}}>&nbsp;&nbsp;&nbsp;&nbsp;</i>{{selectedPlayListType?.[0]}}</p>
+    </div>
+
+    <div class="secondContainerBox" *ngIf="isContainerOpened">
+      <span>View as</span>
+      <div *ngFor="let playList of playListListType">
+        <p (click)="selectPlayListType(playList.name, playList.icon)">
+          <i class="{{ playList.icon }}">&nbsp;&nbsp;&nbsp;&nbsp;</i
+          >{{ playList.name }}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="slidePlaylistDIV">
+  <div class="gridPlaylistDiv">
+    <div><p>#</p></div>
+    <div><p>Title</p></div>
+    <div><p>Artist</p></div>
+    <div><p>Album</p></div>
+    <div><p class="fa-regular fa-clock"></p></div>
+  </div>
+  <div class="horizontalLine"></div>
+  <div
+    class="gridPlaylistDiv"
+    *ngFor="let singers of userSearchedSingersPlaylist; let index = index"
+    (mouseover)="showPlayIcon(index)"
+    (mouseout)="hidePlayIcon(index)"
+  >
+    <span class="number">
+      <ng-container *ngIf="hoveredIndex === index; else showActualIndex"><i class="fa-solid fa-play"></i></ng-container>
+      <ng-template #showActualIndex>{{ index + 1 }}</ng-template>
+    </span>
+    <div class="gridColumns">
+      <img src="{{ singers.images }}" alt="" />
+      <span class="maintitle">{{ singers.song_name }}</span>
+    </div>
+    <span>{{ singers.singers_name }}</span>
+    <span>{{ singers.movie_name }}</span>
+    <span>{{ singers.duration }}</span>
+  </div>
+</div>

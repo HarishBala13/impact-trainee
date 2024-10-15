@@ -1,3 +1,7 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { PremiumService } from 'src/app/core-services/premium-service/premium.service';
@@ -20,15 +24,23 @@ export class PremiumComponent {
     this.id = sessionStorage.getItem("currentUserJSONID");
     this.premiumService.premiumPlansService().subscribe(plans => {
       this.premiumPlansJSON = plans;
-      console.log(plans);
+      // console.log(plans);
     })
   }
 
   subscribeOffer(premiumPlans:any){
-    this.premiumService.userSubscribingPremiumPlans(premiumPlans,this.id);
-    this.router.navigateByUrl('payment').then(() => {
-      location.reload();
-    });
+    if(sessionStorage.getItem("isUserLoggedIn") == "true"){
+      console.log('premiumPlans :>> ', premiumPlans);
+      this.premiumService.userSubscribingPremiumPlans(premiumPlans,this.id);
+      // this.router.navigateByUrl('payment').then(() => {
+      //   location.reload();
+      // });
+    }
+    // else{
+    //   this.router.navigateByUrl('signin').then(() => {
+    //     location.reload();
+    //   })
+    // }
   }
 
 }

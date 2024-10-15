@@ -1,3 +1,7 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 /*  Declaration of Angular Core and Common Modules  */
 import { NgModule } from '@angular/core';
 
@@ -28,6 +32,8 @@ import { PaymentSuccessComponent } from './payment-feature/payment-success/payme
 import { PremiumComponent } from './premium-feature/premium/premium.component';
 import { SearchComponent } from './search-feature/search/search.component';
 import { SearchFilterPipe } from './search-feature/search/search.pipe';
+import { SearchedItemsComponent } from './search-feature/searched-items/searched-items.component';
+import { SearchedPlaylistsComponent } from './search-feature/searched-playlists/searched-playlists.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +55,9 @@ import { SearchFilterPipe } from './search-feature/search/search.pipe';
     PaymentSuccessComponent,
     PremiumComponent,
     SearchComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    SearchedItemsComponent,
+    SearchedPlaylistsComponent
    ],
   imports: [
     FormsModule,

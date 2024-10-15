@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertifyService } from 'src/app/core-services/alertifyjs/alertify.service';
@@ -55,6 +59,7 @@ export class PaymentComponent {
   expiryDateBoolean : boolean = false;
   cardNumberTrue : boolean = false;
   cvvNumberTrue : boolean = false;
+  profileDropdownDivBoolean : boolean = false;
 
   constructor(private alertifyService:AlertifyService,
     private router:Router,
@@ -94,8 +99,21 @@ export class PaymentComponent {
     })
   }
 
+  ngOnInit():void{
+    if(sessionStorage.getItem('isUserLoggedIn') == 'true'){
+      sessionStorage.setItem('onceSessionLogin','true');
+      if(!sessionStorage.getItem('onceSessionLogin')){
+        this.router.navigateByUrl('/premium');
+      }
+    }
+  }
+
+  toggleProfile(){
+    this.profileDropdownDivBoolean =! this.profileDropdownDivBoolean;
+  }
+
   cardValidationForm = this.formBuilder.group({
-    cardHolderName:['',Validators.required,Validators.pattern("^(?!.(.).\\1{2})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")],
+    cardHolderName:['',Validators.required,Validators.pattern("^(?!.(.).\1{2})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")],
     cardNumber:['',Validators.required,Validators.maxLength],
     expiryDate:['',Validators.required],
     cvv:['',Validators.required]

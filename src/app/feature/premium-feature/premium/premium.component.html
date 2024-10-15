@@ -1,27 +1,44 @@
-<app-nav-bar></app-nav-bar>
+<!-- <app-nav-bar></app-nav-bar> -->
 <div class="grid-container">
   <div class="div1">
-      <span>Introducing Premium Feliq</span>
-      <p>Starts from ₹25/- per day</p>
-      <a id="plans">Get Feliq</a>
+      <span>Affordable plans for any situation</span>
+      <p>Choose a Premium plan and listen to ad-free music without limits on your phone, speaker, and other devices. Pay in various ways. Cancel anytime.</p>
+      <div class="plansLink">
+        <a>Get Feliq</a>
+        <a href="/premium/#planss" class="viewPlans">View Plans</a>
+      </div>
   </div>
   <div class="div2">
       <span>Get Premium free for 1 month</span>
       <p>Just ₹150/-month..Grab it soon</p>
-      <a id="plans">Get Started</a>
+      <a>Get Started</a>
   </div>
   <div class="div3">
-    <div class="premiumPlansContainer">
+    <div class="premiumPlansContainer" id="planss">
       <p>Pick your Premium Plan</p>
-      <div class="gridRow" #plans>
+      <div class="gridRow">
         <div *ngFor="let premium of premiumPlansJSON">
           <div class="gridPremiumPlanContainer">
-            <div class="box1"><b>{{premium.plans['title']}}</b><br><br>{{premium.plans['offer']}}<br>{{premium.plans['info']}}<hr></div>
+            <div class="premiumPlanOfferDiv">
+              {{premium.plans['offer']}}
+            </div>
+            <div class="imageContent">
+              <img src="/assets/brand-images/noBGBrandLogo.png" class="brandlogo" title="Dulcet Home">
+              <p>Premium</p>
+            </div>
+            <div class="box1">
+              <b>{{premium.plans['title']}}</b>
+              <br><br>
+              {{premium.plans['offer']}}
+              <br>
+              {{premium.plans['info']}}
+              <hr>
+            </div>
             <div class="box2">
               <i class="fa-solid fa-check" style="color: green;"></i>&nbsp;&nbsp;{{premium.benefits['one']}}<br>
               <i class="fa-solid fa-check" style="color: green;"></i>&nbsp;&nbsp;{{premium.benefits['two']}}<br>
             </div>
-            <div class="button"><button><a (click)="subscribeOffer(premium)">Subscribe</a></button></div>
+            <div class="button"><button><a (click)="subscribeOffer(premium)" routerLink="/payment">Subscribe</a></button></div>
           </div>
         </div>
       </div>

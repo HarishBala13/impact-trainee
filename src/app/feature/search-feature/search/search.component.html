@@ -1,29 +1,46 @@
-<app-nav-bar></app-nav-bar>
-
 <div class="search-container">
   <div class="searchBar">
-    <i class="fa-solid fa-search"></i> <input type="text" [(ngModel)]="searchString" id="input-box" name="searchString" placeholder="Search your Favourites"/>
+    <i class="fa-solid fa-search"></i>
+    <input
+      type="text"
+      [(ngModel)]="searchString"
+      (input)="onSearchTextChanged()"
+      id="input-box"
+      name="searchString"
+      placeholder="Search your Favourites"
+    />
   </div>
   <div class="result-box" id="input-box">
     <ul>
       <li *ngIf="searchString.length <= 0">No Searches</li>
-     <div *ngFor="let key of keywords | searchFilter: searchString">
-      <li *ngIf="searchString.length > 1">{{key.artistName}}</li>
-     </div>
+      <li
+        *ngIf="
+          searchString.length > 0 &&
+          (artists | searchFilter : searchString).length === 0
+        "
+      >
+        No Matches Found
+      </li>
+      <li *ngFor="let key of artists | searchFilter : searchString" (click)="onSearchedArtist(key)">
+        {{ key }}
+      </li>
     </ul>
   </div>
 
   <span>Browse All</span>
 
   <div class="searchBox">
-  <div *ngFor="let src of searchBoxes">
-    <div>
-      <a class="box" routerLink="/searchedPlaylist" [style.backgroundColor]="src.backgroundColor">
-      <p>{{src.title}}</p>
-      <img class="scaledImage" src="{{src.image}}">
-    </a></div>
-  </div>
+    <div *ngFor="let src of searchBoxes">
+      <div>
+        <a
+          class="box"
+          routerLink="/searchedPlaylist"
+          [style.backgroundColor]="src.backgroundColor"
+        >
+          <p>{{ src.title }}</p>
+          <img class="scaledImage" src="{{ src.image }}" alt={{src.image}}/>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
-
-<app-footer></app-footer>

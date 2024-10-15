@@ -1,8 +1,8 @@
 <div class="accounts_right">
-  <div class="backgroundBlur" *ngIf="cardCancelConfirmation">
-    <div class="paymentCardCancel">
-      <p>Are you sure want to un-link your {{userCardType}} card from Dulcet?</p>
-      <p>If you sure click <b>OK</b> it will be removed otherwise click <b>Cancel</b> to restore it.</p>
+  <div class="paymentCardCancel" *ngIf="cardCancelConfirmation">
+    <div class="cancelCardContent">
+      <p>Are you sure want to un-link your <b>{{ userCardType }}</b> card from Dulcet?</p>
+      <p>If you're sure click <b>OK</b> otherwise click <b>Cancel</b> to revert changes.</p>
       <div class="buttons">
         <div><button (click)="removeUserPaymentCard()">OK</button></div>
         <div><button (click)="closeCardCancelConfirmation()">Cancel</button></div>
@@ -10,23 +10,33 @@
     </div>
   </div>
   <div class="noPaymentCard" *ngIf="noPaymentCardDiv">
-    <p>You don't linked any cards here if you buy premium plans it will be shown here</p>
+    <p>
+      You haven't linked any cards here if you buy our any one of premium you'll
+      get here
+    </p>
   </div>
-  <div class="paymentCard" *ngIf="paymentCardDiv">
-    <i class="fa-solid fa-wifi fa-rotate-90"></i>
-    <div class="simImage">
-      <img src="/assets/home-images/cardSim.jpg">
+  <div class="paymentCardBackground">
+    <div class="paymentCard open" *ngIf="paymentCardDiv">
+      <div>{{cardTypeTitle}}</div>
+      <div class="simImage">
+        <img src="/assets/home-images/cardSim.jpg" alt="sim-pin" />
+        <i class="fa-solid fa-wifi fa-rotate-90"></i>
+      </div>
+      <p class="cardDetails">{{ userCardNumber }}</p>
+      <div class="validTo">
+        <div>
+          <span>Valid</span>
+          <span>thru</span>
+        </div>
+        <div>{{ expiryDate }}</div>
+      </div>
+      <div class="cardType">
+        <p>{{ cardHolderName }}</p>
+        <img src="{{ cardImage }}" alt="sim-pin" />
+      </div>
     </div>
-    <div class="cardDetails">
-      <p>{{userCardNumber}}</p>
-      <p>{{expiryDate}}</p>
+    <div class="cancelCard" *ngIf="paymentCardDiv">
+      <button (click)="openCardCancelConfirmation()">Cancel</button>
     </div>
-    <div class="cardType">
-      <p>{{cardHolderName}}</p>
-      <img src="{{cardImage}}">
-    </div>
-</div>
-<div class="cancelCard" *ngIf="paymentCardDiv">
-  <button (click)="openCardCancelConfirmation()">Cancel</button>
-</div>
+  </div>
 </div>

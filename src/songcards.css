@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
+  justify-content: center;
   /*Gap concept need to work more bcoz of moving*/
 }
 .card{

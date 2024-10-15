@@ -1,9 +1,14 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertifyService } from 'src/app/core-services/alertifyjs/alertify.service';
 import { UsersLogService } from 'src/app/core-services/users/users-log.service';
+import { environmentvalues } from 'src/app/environments/environment';
 
 @Component({
   selector: 'app-update-password',
@@ -22,14 +27,14 @@ export class UpdatePasswordComponent {
 
     }
   forgotnewpassForm=this.formBuilder.group({
-    forgotpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:\{\\\}\\\[\\\]\\\|\\\+\\\-\\\=\\\_\\\)\\\(\\\)\\\`\\\/\\\\\\]])[A-Za-z0-9\d$@].{7,}`)]],
-    reforgotpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:\{\\\}\\\[\\\]\\\|\\\+\\\-\\\=\\\_\\\)\\\(\\\)\\\`\\\/\\\\\\]])[A-Za-z0-9\d$@].{7,}`)]]
+    forgotpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]],
+    reforgotpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]]
   })
 
   submitForgotnewPassForm(){
     let forgotEmail = localStorage.getItem("ForgotEmail");
     console.log(forgotEmail);
-    this._client.get<any>("http://localhost:3000/usersregister").subscribe(x=>{
+    this._client.get<any>(environmentvalues.user_registration_url).subscribe(x=>{
       const OldPass = x.find((y:any)=>{
         console.log(y.regemail);
         return  forgotEmail == y.regemail && this.forgotnewpassForm.value.forgotpassword == y.regpassword && this.forgotnewpassForm.value.reforgotpassword && y.regconfirmpassword
@@ -41,7 +46,7 @@ export class UpdatePasswordComponent {
         console.log(OldPass)
         this.alertifyService.Success("Password updated Successfully..You will be redirected to Login page in a few seconds");
         this.userLogService.updateUser(this.forgotnewpassForm.value.forgotpassword,this.forgotnewpassForm.value.reforgotpassword,this.currentuserJSONID);
-        setTimeout(()=>this.router.navigate(['login']),5000);
+        setTimeout(()=>this.router.navigate(['signin']),5000);
       }
       else{
         this.alertifyService.Error("Password not matched..Please Kindly recheck");

@@ -1,3 +1,7 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -34,7 +38,7 @@ export class PaymentService {
     this.paymentDetails = {
       cardExpiryDate: expiryDate,
       cardType: cardName,
-      cardNumber: 'XXXX XXXX '+cardNumber.slice(12),
+      cardNumber: 'XXXX XXXX '+ cardNumber.slice(12),
       cardHolderName: cardHolderName,
       cardImage: cardImage,
       premiumPlanPurchasedDate: purchasedDate,
@@ -44,6 +48,7 @@ export class PaymentService {
       premiumPlanPrice: planPrice,
       userState: state
     }
+    console.log(cardNumber)
     this._http.patch(environmentvalues.user_registration_url+"/"+this.jsonID, {paymentCard: [this.paymentDetails]}).subscribe( () => {});
 
     this.paymentDetailsEmail = {
@@ -55,7 +60,7 @@ export class PaymentService {
       premiumPlanPrice : planPrice
     }
 
-    this.sendRegisteredPremiumPlanEmail("http://localhost:1999/sendRegisteredPremiumPlanEmail",this.paymentDetailsEmail);
+    this.sendRegisteredPremiumPlanEmail(environmentvalues.send_registered_premium_plan_email_url,this.paymentDetailsEmail);
   }
 
   getUserDetails(){

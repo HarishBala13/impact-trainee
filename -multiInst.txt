@@ -1,0 +1,3 @@
+worked on mobile responsive --> completed 50%
+done conditional typescript changes and touched music bar ater a long time
+music play bar is working as that what we thinked but need to work on previous and next song playing

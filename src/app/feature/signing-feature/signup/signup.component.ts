@@ -1,3 +1,7 @@
+/*
+ Programmer: HarishBala13
+ Date: Tue, Oct 15, 2024  8:52:25 PM
+*/
 import { Component } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -19,10 +23,10 @@ export class SignupComponent {
   userRegisterTime:string='';
   registerday = new Date();
   registerForm=this.formBuilder.group({
-    regname:['',[Validators.required,Validators.pattern("^(?!.(.).\\1{2})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")]],
-    regemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,5}$")]],
-    regpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:\{\\\}\\\[\\\]\\\|\\\+\\\-\\\=\\\_\\\)\\\(\\\)\\\`\\\/\\\\\\]])[A-Za-z0-9\d$@].{7,}`)]],
-    regconfirmpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:\{\\\}\\\[\\\]\\\|\\\+\\\-\\\=\\\_\\\)\\\(\\\)\\\`\\\/\\\\\\]])[A-Za-z0-9\d$@].{7,}`)]]
+    regname:['',[Validators.required,Validators.pattern("^(?!.(.).\1{2})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")]],
+    regemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$")]],
+    regpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]],
+    regconfirmpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]]
   })
 
 
@@ -31,7 +35,7 @@ export class SignupComponent {
 
       this.userRegisterTime=formatDate(this.registerday, 'dd-MM-yyyy hh:mm:ss a', 'en-US');
 
-      let newRegUser={
+      let newRegUser = {
         regname:this.registerForm.value.regname,
         regemail:this.registerForm.value.regemail,
         regpassword:this.registerForm.value.regpassword,
@@ -39,31 +43,20 @@ export class SignupComponent {
         UserRegisterTime:this.userRegisterTime
       }
 
-      this.userLogService.addUser(newRegUser).subscribe(()=>{
-        this.alertifyService.NotifyUser(this.registerForm.value.regname,`Please check your mail ${this.registerForm.value.regemail} for verification..Thank You`);
-        this.registerForm.reset();
-      });
-
-      let users={
+      let emailUserData = {
         useremail:this.registerForm.value.regemail,
         username:this.registerForm.value.regname,
         registeredtime:this.userRegisterTime
       }
 
-      this.userLogService.sendRegisterEmail("http://localhost:1999/sendRegisterEmail",users).subscribe((data)=>{});
-
-      this.router.navigate(['signin']);
-
+      this.userLogService.validRegisteredUser(newRegUser, emailUserData);
+      this.registerForm.reset();
     }
     else if(this.registerForm.value.regpassword != this.registerForm.value.regconfirmpassword){
-
       this.alertifyService.Error("Password doesn't match");
-
     }
     else if(this.registerForm.value.regname == '' && this.registerForm.value.regemail == '' && this.registerForm.value.regpassword == '' && this.registerForm.value.regconfirmpassword == ''){
-
       this.alertifyService.Error("Please fill all the Blanks");
-
     }
   }
 

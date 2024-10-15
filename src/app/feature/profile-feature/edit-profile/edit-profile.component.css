@@ -5,34 +5,40 @@
   flex-direction: column;
   padding: 1rem;
 }
-
 .accounts_right .profileContainer{
   padding: 1rem;
 }
 .accounts_right .profileContainer .profileBox{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .accounts_right .profileContainer .profileBox .profileImage img{
   width: 150px;
   height: 150px;
+  object-fit: fill;
   cursor: pointer;
+}
+.accounts_right .profileContainer .profileBox .profileImage img:hover{
+  background-image: url('/assets/home-images/pencil.png');
+  opacity: 0.5;
+  transition: background-image 300ms ease-in;
 }
 .accounts_right .profileContainer .profileBox .profileName{
   font-size: 40px;
   font-weight: bolder;
-  color: rgb(142, 140, 137);
+  color: #000;
   cursor: pointer;
 }
 .accounts_right .profileContainer .profileBox .profileName:hover{
-  color: #000;
+  color: rgb(142, 140, 137);
 }
 .accounts_right .profileEditor{
   background-color: rgba(142, 140, 137,0.2);
   border-radius: 20px;
   padding: 2rem;
-  transition: 2s;
+  transform: translateX(10px);
+  transition: 2000ms ease linear;
 }
 .accounts_right .profileHeads{
   display: flex;
@@ -52,10 +58,15 @@
 .accounts_right .profileEditor .profileForm .inputBoxes input{
   width: 100%;
   background-color: white;
-  box-shadow: 0px 4px 4px 3px  rgba(199, 182, 182, 0.874);
   border-radius: 20px;
   padding: 15px;
   border: none;
+  box-shadow: 0px 4px 4px 3px  rgba(199, 182, 182, 0.874);
+}
+.accounts_right .profileEditor .profileForm .inputBoxes input[type=file]{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
 }
 .accounts_right .profileEditor .profileForm form .profileButton{
   display: grid;
@@ -68,8 +79,10 @@
   border: none;
   width: 30%;
   height: 40px;
-  font-size: 15px;
-  box-shadow: 0px 2px 3px 5px rgb(76, 75, 75);
+  font-size: 20px;
+  font-weight: 500;
+  box-shadow: 0px 1px 6px 6px rgba(76, 75, 75, 0.4);
+  cursor: pointer;
 }
 .accounts_right .profileHeads .name, .accounts_right .profileHeads .fa-solid{
   font-size: 25px;

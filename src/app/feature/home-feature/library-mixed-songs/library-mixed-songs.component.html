@@ -1,4 +1,4 @@
-<app-nav-bar></app-nav-bar>
+<!-- <app-nav-bar></app-nav-bar> -->
 <div class="card_container">
   <div class="title_head">
     <a routerLink="/topsongs" routerLinkActive="active">Top Songs</a>
@@ -37,15 +37,15 @@
     </div>
     <div class="box2">
       <div class="icon">
-        <button (click)="playSong()" id="previous"><i class="bi bi-play-fill" id="masterPlay"></i></button>
-        <button (click)="pauseSong()" id="previous"><i class="bi bi-pause-fill" id="masterPlay"></i></button>
-        <button (click)="previousSong()" id="play"><i class=" bi bi-skip-start-fill"  id="masterPlay"></i></button>
-        <button (click)="nextSong()" id="next"><i class="bi bi-skip-end-fill" id="next"></i></button>
+        <button title="songs" (click)="playSong()" id="previous"><i class="bi bi-play-fill" id="masterPlay"></i></button>
+        <button title="songs" (click)="pauseSong()" id="previous"><i class="bi bi-pause-fill" id="masterPlay"></i></button>
+        <button title="songs" (click)="previousSong()" id="play"><i class=" bi bi-skip-start-fill"  id="masterPlay"></i></button>
+        <button title="songs" (click)="nextSong()" id="next"><i class="bi bi-skip-end-fill" id="next"></i></button>
       </div>
       <div class="box1">
         <div id="currentStart">0:00</div>
         <div class="bar">
-            <input type="range" id="seek" min="0" value="0" max="100" style="color: white;">
+            <input type="range" id="seek" min="0" value="0" max="100" style="color: white;" title="sleeker">
             <div class="bar2" id="bar2"></div>
             <div class="dot"></div>
         </div>
@@ -55,7 +55,7 @@
 
   <div class="vol">
       <i class="bi bi-volume-down-fill" id="vol_icon"></i>
-      <input type="range" id="vol" min="0" value="30" max="100">
+      <input type="range" id="vol" min="0" value="30" max="100" title="volume">
       <div class="vol_bar"></div>
       <div class="dot" id="vol_dot"></div>
   </div>
