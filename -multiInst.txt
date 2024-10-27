@@ -1,3 +1,7 @@
+done the work recently before the Oct 15 around 3 weeks 
 worked on mobile responsive --> completed 50%
 done conditional typescript changes and touched music bar ater a long time
 music play bar is working as that what we thinked but need to work on previous and next song playing
+
+15/10/2024
+done the above tasks and commit in the GIT check with some Husky pre-commit which will add the author name automatically
