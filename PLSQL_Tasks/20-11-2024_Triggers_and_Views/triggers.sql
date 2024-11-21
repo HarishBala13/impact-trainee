@@ -1,4 +1,5 @@
 -- Starting triggers when there is DML Command in the Employee Table
+-- 1) Create a trigger that fires after inserting new record in the Employee table
 delimiter &&
 create trigger insert_trigger
 after insert on Employee
@@ -20,6 +21,7 @@ select * from employee_log;
 
 drop trigger learning_plsql.insert_trigger;
  
+-- 2) Create a trigger that display the count of employee whose salary gots updated
 delimiter //
 create trigger trg_after_update_salary
 on Employee
