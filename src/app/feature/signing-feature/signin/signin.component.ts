@@ -31,7 +31,7 @@ export class SigninComponent {
 
   loginForm = this.formBuilder.group({
     email:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$")]],
-    password:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]]
+    password:['',[Validators.required,Validators.pattern(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/])[A-Za-z0-9$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/]{8,}$/)]]
   })
 
 submitLoginForm(){

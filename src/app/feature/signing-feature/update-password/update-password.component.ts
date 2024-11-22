@@ -26,10 +26,27 @@ export class UpdatePasswordComponent {
     private alertifyService:AlertifyService){
 
     }
-  forgotnewpassForm=this.formBuilder.group({
-    forgotpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]],
-    reforgotpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]]
-  })
+  // forgotnewpassForm=this.formBuilder.group({
+  //   forgotpassword:['',[Validators.required,Validators.pattern(^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/])[A-Za-z0-9$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/]{8,}$)]],
+  //   reforgotpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]]
+  // })
+
+  forgotnewpassForm = this.formBuilder.group({
+    forgotpassword: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/])[A-Za-z0-9$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/]{8,}$/)
+      ]
+    ],
+    reforgotpassword: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/])[A-Za-z0-9$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/]{8,}$/)
+      ]
+    ]
+  });
 
   submitForgotnewPassForm(){
     let forgotEmail = localStorage.getItem("ForgotEmail");

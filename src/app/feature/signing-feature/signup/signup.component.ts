@@ -23,10 +23,10 @@ export class SignupComponent {
   userRegisterTime:string='';
   registerday = new Date();
   registerForm=this.formBuilder.group({
-    regname:['',[Validators.required,Validators.pattern("^(?!.(.).\1{2})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")]],
+    regname:['',[Validators.required,Validators.pattern("^(?!.(.).\\1{2})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")]],
     regemail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$")]],
-    regpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]],
-    regconfirmpassword:['',[Validators.required,Validators.pattern(`(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\;:\{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\]])[A-Za-z0-9\d$@].{7,}`)]]
+    regpassword:['',[Validators.required,Validators.pattern(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/])[A-Za-z0-9$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/]{8,}$/)]],
+    regconfirmpassword:['',[Validators.required,Validators.pattern(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/])[A-Za-z0-9$@$!#^~%*?&,.<>"'\\;:\{\}\[\]|+\-=_()\\/]{8,}$/)]]
   })
 
 

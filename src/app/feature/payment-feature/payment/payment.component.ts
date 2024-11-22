@@ -113,7 +113,7 @@ export class PaymentComponent {
   }
 
   cardValidationForm = this.formBuilder.group({
-    cardHolderName:['',Validators.required,Validators.pattern("^(?!.(.).\1{2})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")],
+    cardHolderName:['',Validators.required,Validators.pattern("^(?!.(.).\\1{2})[a-zA-Z][a-zA-Z0-9_-]{3,15}$")],
     cardNumber:['',Validators.required,Validators.maxLength],
     expiryDate:['',Validators.required],
     cvv:['',Validators.required]
