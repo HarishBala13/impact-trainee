@@ -44,14 +44,15 @@ class TalentNurturing extends Management {
 		return "Ready with fundamentals.\n\n";
 	}
 	public void getOnboardStatus() {
-		System.out.println("\nAs per the information we have planned to onboard "+batch_no+" in the month of November.\n\nAfter onboaded ---\n\nYour are assigned into the following practices -->\n");
+		System.out.println("\nAs per the information we have planned to onboard "+batch_no+" in the month of November.\n\nAfter onboarded ---\n\nYour are assigned into the following practices -->\n");
 		for(int i=0; i<practices.length; i++) {
 			System.out.print(practices[i]+", \t");
 		}
-		System.out.println();
+		System.out.print("\nAfter getting access card you must follow these two rules:-\n");
 	}
 	public void updateTimeSheet(String records) {
 //		perform some operation with records
+		System.out.println("List of Timesheet measures followed as per company guidelines:");
 		System.out.println("Records of the onboarding status have been updated for "+records+" by TN Team.");
 	}
 }
@@ -64,11 +65,11 @@ public class Organization {
 		talentnurturing.batch_no = 2023;
 		talentnurturing.announcements();
 		talentnurturing.getOnboardStatus();
-		System.out.println("After getting access card you must follow these two rules:-");
+		
 		talentnurturing.accessEntry();
 		talentnurturing.accessExit();
 		System.out.print("After some bit of brush up technologies now the trainees are "+talentnurturing.getFundamentalsStrong());
-		System.out.println("List of Timesheet measures followed as per company guidelines:");
+		
 		talentnurturing.updateTimeSheet();
 		Management management = new Management();
 		management.updateTimeSheet("Jun-Nov 2023");
