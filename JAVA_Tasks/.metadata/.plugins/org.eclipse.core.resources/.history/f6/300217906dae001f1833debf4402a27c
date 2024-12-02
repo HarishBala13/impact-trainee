@@ -1,5 +1,0 @@
-LOG_FILE_PATH = dulcet-application.log
-SQL_CONNECTOR = jdbc:mysql://localhost:3306
-SQL_DATABASE = dulcet_database
-SQL_USERNAME = root
-SQL_PASWORD = Aspire@123
