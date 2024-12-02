@@ -1,0 +1,81 @@
+package comdulcetapplication;
+
+/*
+@title			Dulcet - Music Player
+@author			Harish B
+@createdOn		29-11-2024
+@modifiedOn		01-12-2024
+@reviewedBy		-
+@reviewedOn		-
+*/
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
+
+public class SQL_Connector {
+	
+	public static void getSqlClassConnection() throws ClassNotFoundException {
+		try {
+			Class.forName(ConfigLoader.getProperty("SQL_CLASSNAME"));
+		} catch (ClassNotFoundException classNotFoundException) {
+			classNotFoundException.printStackTrace();
+		}		
+	}
+	
+	public static Connection getSqlConnection() throws SQLException {
+		
+		return DriverManager.getConnection(
+				ConfigLoader.getProperty("SQL_CONNECTOR"),
+				ConfigLoader.getProperty("SQL_USERNAME"),
+				ConfigLoader.getProperty("SQL_PASSWORD")
+			);
+		}
+	
+	public static Statement connectSqlStatement() throws SQLException {
+		
+		Connection connection = null;
+		Statement statement = null;
+		try {
+			connection = getSqlConnection();
+			statement = connection.createStatement();
+		} catch (SQLException sqlException) {
+			sqlException.printStackTrace();
+		}
+		return statement;		
+	}
+	
+	public static void registerUsertoDatabase(String userName, int userMobileNumber, String userEmail, String userPassword) {
+		
+		
+		// Creating randomId for the users
+		Random random = new Random();
+		int userId = random.nextInt(8999) + 1000;
+		
+		// Updating the date when the user is registering
+		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		LocalDateTime localDateTime = LocalDateTime.now();
+		String userRegisteredDate = dateTimeFormatter.format(localDateTime);
+		
+		// Insert the values into SQL Database
+		Statement statement;
+		String  insertUserQuery = "insert into AccountCreator values("+userId+", "+userName+", "+userEmail+", "+userMobileNumber+", "+userPassword+", "+userRegisteredDate+")";
+		
+		try {
+			statement = connectSqlStatement();
+			statement.executeUpdate(insertUserQuery);
+		} catch (SQLException sqlException) {
+			sqlException.printStackTrace();
+		}
+		
+//		String userId = String.format("%04d", random.nextInt(10000));
+		
+	}
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {}
+
+}
