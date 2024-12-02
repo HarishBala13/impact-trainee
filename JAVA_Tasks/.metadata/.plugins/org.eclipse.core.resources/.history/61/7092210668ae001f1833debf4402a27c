@@ -1,0 +1,41 @@
+package comdulcetapplication;
+
+/*
+@title			Dulcet - Music Player
+@author			Harish B
+@createdOn		28-11-2024
+@modifiedOn		-
+@reviewedBy		-
+@reviewedOn		-
+*/
+
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class UserManager {
+	
+    private HashMap<String, User> userMap = new HashMap<>();
+    AccountCreator accountCreator = new AccountCreator();
+    AccountHandler accountHandler = new AccountHandler();
+    private Scanner scanner = new Scanner(System.in);
+
+    public boolean start() {
+        System.out.println("\n1. Login\n2. Register\n3. Exit");
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Clear newline
+
+        switch (choice) {
+            case 1:
+                return accountHandler.loginUser();
+            case 2:
+            	accountCreator.registerUser();
+                return start();
+            case 3:
+                return false;
+            default:
+                System.out.println("Invalid option.");
+                return start();
+        }
+    }
+}

@@ -1,0 +1,36 @@
+package comdulcetapplication;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class SQL_Connector {
+	
+	public static void getSqlConnection() {
+		
+		try {
+			Class.forName(ConfigLoader.getProperty("SQL_CLASSNAME"));
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Connection connection;
+		try {
+			connection = DriverManager.getConnection("SQL_CONNECTOR", "SQL_USERNAME", "SQL_PASSWORD");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			connection.close();
+		}
+		System.out.println("connection created");
+	}
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+
+	}
+
+}

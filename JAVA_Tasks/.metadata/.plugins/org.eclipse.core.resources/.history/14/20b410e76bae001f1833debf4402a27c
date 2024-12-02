@@ -1,0 +1,10 @@
+package comdulcetapplication;
+
+public class SQL_Connector {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

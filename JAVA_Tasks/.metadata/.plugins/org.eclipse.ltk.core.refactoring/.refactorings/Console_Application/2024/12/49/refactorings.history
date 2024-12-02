@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;comdulcetapplication.UserManager&apos; to &apos;AccountManager&apos;&#x0D;&#x0A;- Original project: &apos;Console_Application&apos;&#x0D;&#x0A;- Original element: &apos;comdulcetapplication.UserManager&apos;&#x0D;&#x0A;- Renamed element: &apos;comdulcetapplication.AccountManager&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;UserManager&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/&lt;comdulcetapplication{UserManager.java[UserManager" matchStrategy="1" name="AccountManager" qualified="false" references="true" similarDeclarations="false" stamp="1733108511741" textual="false" version="1.0"/>
+</session>

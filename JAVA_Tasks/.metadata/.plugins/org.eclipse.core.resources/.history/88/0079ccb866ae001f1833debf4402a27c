@@ -1,0 +1,37 @@
+package comdulcetapplication;
+
+import java.util.Scanner;
+
+/*
+@title			Dulcet - Music Player
+@author			Harish B
+@createdOn		28-11-2024
+@modifiedOn		-
+@reviewedBy		-
+@reviewedOn		-
+*/
+
+public class AccountHandler {
+	
+ public void loginUser() {
+	 
+	 Scanner scanner = new Scanner(System.in);
+	   System.out.print("Enter email: ");
+       String email = scanner.nextLine();
+
+       System.out.print("Enter password: ");
+       char[] password = PasswordMasker.readPassword();
+
+//       User user = userMap.get(email);
+//
+//       if (user != null && user.isPasswordCorrect(new String(password))) {
+//           return true;
+//       } else {
+//           System.out.println("Invalid email or password.");
+//           return false;
+//       }
+       scanner.close();
+ }
+ public static void main(String[] args) {
+ }
+}
