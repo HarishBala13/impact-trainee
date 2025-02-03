@@ -106,11 +106,11 @@ public class SQL_Connector {
 			resultSet = preparedStatement.executeQuery();
 			
 			if(resultSet.next()) {
-				  System.out.println("Login successful! \n Welcome, "+resultSet.getString("userName"));
+				  System.out.println(ConfigLoader.getProperty("GREEN_FONT")+"Login successful! \nWelcome, "+resultSet.getString("userName")+ConfigLoader.getProperty("RESET_BLACK_FONT"));
 				  return true;
 			}
 			else {
-				System.out.println("Invalid email or password.");
+//				System.out.println("Invalid email or password.");
 				return false;
 			}
 			

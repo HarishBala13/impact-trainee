@@ -16,6 +16,7 @@ public class AccountHandler {
  public boolean loginUser() {
 	 
 	 Scanner scanner = null;
+	 SongManager songManager = new SongManager();
 	 try {
 		 scanner = new Scanner(System.in);
 		 int maxAttempts = 3;
@@ -32,14 +33,15 @@ public class AccountHandler {
 
 		     isUserLoggedIn = SQL_Connector.retrieveUserFromDatabase(email, password);
 		     if(isUserLoggedIn) {
-		       return true;
+		    	 songManager.start();
+		    	 return true;
 		     }
 		     else {
 		       userAttempts++;
-		       System.out.println("Incorrect credentials. Attempts remaining: " + (maxAttempts - userAttempts));
+		       System.out.println(ConfigLoader.getProperty("RED_FONT")+"Incorrect credentials. Attempts remaining: " + (maxAttempts - userAttempts));
 		    }
 		 }
-		 System.out.println("Too many failed attempts. Please try again later.");
+		 System.out.println("Too many failed attempts. Please try again later."+ConfigLoader.getProperty("RESET_BLACK_FONT"));
 		 return false;
 	} 
 	finally {

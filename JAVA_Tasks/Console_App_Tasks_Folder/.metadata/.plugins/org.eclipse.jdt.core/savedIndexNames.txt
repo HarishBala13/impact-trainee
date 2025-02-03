@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\harish.balamurugan\tasks_local_repo\JAVA_Tasks\Console_App_Tasks_Folder\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+1288848795.index
+1435158125.index
